@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculadora de Mana MTG — v8</title></head>
+<body style="margin:0;background:#090d16;color:#f8fafc;font-family:system-ui,sans-serif"><div id="status" style="padding:24px;text-align:center">Carregando Calculadora de Mana MTG v8…</div><script>
+(async()=>{try{const b64=await (await fetch('v8.html.gz.b64')).text();const bin=Uint8Array.from(atob(b64.replace(/\s/g,'')),c=>c.charCodeAt(0));const text=await new Response(new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(text);document.close();}catch(e){document.getElementById('status').innerHTML='<h2>Não foi possível carregar a v8</h2><p>'+String(e).replace(/[<>]/g,'')+'</p><p>Abra o arquivo <code>v8.html.gz.b64</code> no repositório para obter a versão publicada.</p>';}})();
+</script></body></html>
